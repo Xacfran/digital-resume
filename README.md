@@ -11,4 +11,4 @@ The site is based on an amazing template you can download [here](https://bootstr
 
 The photos stored in this repository were taken by [Andrés Saa](https://andressaa.com/).
 
-[Live Demo](https://xacfran.github.io/Francisco-X-Castellanos/)
+You can watch this website [Live](https://xacfran.github.io/Francisco-X-Castellanos/)!

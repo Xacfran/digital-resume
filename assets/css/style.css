@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+
   color: #272829;
 }
 
@@ -24,7 +24,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "",;
 }
 
 /*--------------------------------------------------------------
@@ -60,44 +60,29 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Project buttons
 --------------------------------------------------------------*/
+
 .next-project {
   margin: auto;
   right: 15px;
   bottom: 15px;
   z-index: 996;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   background: #149ddd;
-  border: 0;
   width: 100px;
   height: 45px;
-  padding: 10px 24px;
   color: #fff;
   transition: 0.4s;
   border-radius: 5px;
+  padding: 10px 24px;
+  text-align: center;
+  vertical-align: middle;
 }
 .next-project:hover {
   background: #37b3ed;
   color: #fff;
 }
-
-.previous-project {
-  margin: auto;
-  right: 15px;
-  bottom: 15px;
-  z-index: 996;
-  background: #149ddd;
-  border: 0;
-  width: 150px;
-  height: 45px;
-  padding: 10px 24px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 5px;
-}
-.previous-project:hover {
-  background: #37b3ed;
-  color: #fff;
-}
-
 
 /*--------------------------------------------------------------
 # Header

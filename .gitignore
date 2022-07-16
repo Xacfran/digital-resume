@@ -1,2 +1,5 @@
 # Ignore pictures folders
 /assets/img/
+
+# Ignore vscode folder
+.vscode

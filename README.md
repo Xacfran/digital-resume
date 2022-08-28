@@ -6,6 +6,6 @@ The site is based on an amazing template you can freely download [here](https://
 
 This is a work in progress so bear with me as I continue to improve it. In the mean time, you can check out this [detailed tutorial](https://workwithcarolyn.com/blog/digital-cv-guide) on how to build your own resume on Github.
 
-You can have a look at this website [here](https://xacfran.github.io/Francisco-X-Castellanos/)!
+You can have a look at this website [here](https://xacfran.github.io/digital-resume/)!
 
 Photo credits: [Andrés Saa](https://andressaa.com/).

@@ -1,5 +1,3 @@
-# Ignore pictures folders
-/assets/img/
-
-# Ignore vscode folder
+./assets/img/
 .vscode
+.404

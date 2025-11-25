@@ -701,6 +701,28 @@ section {
   padding: 0;
 }
 
+.portfolio-details .tech-stack {
+  margin-top: 30px;
+}
+
+.portfolio-details .tech-stack h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .tech-badge {
+  display: inline-block;
+  background: #f3f3f3;
+  color: #333;
+  padding: 8px 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
 
 /*--------------------------------------------------------------
 # Services
@@ -1092,40 +1114,6 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#footer {
-  padding: 15px;
-  color: #f4f6fd;
-  font-size: 14px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 300px;
-  z-index: 9999;
-  background: #040b14;
-}
-
-#footer .copyright {
-  text-align: center;
-}
-
-#footer .credits {
-  padding-top: 5px;
-  text-align: center;
-  font-size: 13px;
-  color: #eaebf0;
-}
-
-@media (max-width: 1199px) {
-  #footer {
-    position: static;
-    width: auto;
-    padding-right: 20px 15px;
-  }
-}
-
-/*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
@@ -1346,23 +1334,38 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  background: #149ddd;
-  padding: 8px 20px;
-  border-radius: 50px;
+  color: #050d18;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
   transition: 0.3s;
-  font-size: 14px;
+  font-size: 20px;
+  font-weight: 400;
   text-decoration: none;
+  border-bottom: none;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-download-cv span {
+  border-bottom: 2px solid #050d18;
+  transition: 0.3s;
+  margin-right: 6px;
 }
 
 .btn-download-cv i {
-  margin-left: 5px;
-  font-size: 18px;
+  margin-left: 8px;
+  font-size: 24px;
+  color: #149ddd;
 }
 
 .btn-download-cv:hover {
-  background: #37b3ed;
-  color: #fff;
+  background: transparent;
+  color: #149ddd;
+}
+
+.btn-download-cv:hover span {
+  border-bottom-color: #149ddd;
 }
 
 .resume-tabs {
@@ -1491,4 +1494,74 @@ section {
   .resume-content .resume-item .item-date {
     flex: 0 0 auto;
   }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+  padding: 30px 0;
+  font-size: 14px;
+  text-align: center;
+  background: #f7f8f9;
+}
+
+.footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #45505b;
+  position: relative;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.footer p {
+  font-size: 15px;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 30px 0;
+  color: #6c757d;
+}
+
+.footer .social-links {
+  margin: 0 0 30px 0;
+}
+
+.footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  color: #45505b;
+  line-height: 1;
+  margin: 0 8px;
+  transition: 0.3s;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  background: #fff;
+}
+
+.footer .social-links a:hover {
+  color: #fff;
+  background: #149ddd;
+}
+
+.footer .copyright {
+  margin: 0 0 5px 0;
+  color: #45505b;
+}
+
+.footer .credits {
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.footer .credits a {
+  color: #149ddd;
+  transition: 0.3s;
+}
+
+.footer .credits a:hover {
+  text-decoration: underline;
 }

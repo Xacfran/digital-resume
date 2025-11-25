@@ -486,66 +486,7 @@ section {
   background-color: #149ddd;
 }
 
-/*--------------------------------------------------------------
-# Resume
---------------------------------------------------------------*/
-.resume .resume-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #050d18;
-}
 
-.resume .resume-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid #1f5297;
-  position: relative;
-}
-
-.resume .resume-item h4 {
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-  margin-bottom: 10px;
-}
-
-.resume .resume-item h5 {
-  font-size: 16px;
-  background: #e4edf9;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.resume .resume-item ul {
-  padding-left: 20px;
-}
-
-.resume .resume-item ul li {
-  padding-bottom: 10px;
-}
-
-.resume .resume-item:last-child {
-  padding-bottom: 0;
-}
-
-.resume .resume-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: #fff;
-  border: 2px solid #1f5297;
-}
 
 /*--------------------------------------------------------------
 # Portfolio
@@ -1375,4 +1316,162 @@ section {
   text-align: center;
   font-size: 13px;
   color: var(--default-color);
+}
+
+/*--------------------------------------------------------------
+# Resume Tabs & Button
+--------------------------------------------------------------*/
+.resume .section-title {
+  margin-bottom: 20px;
+}
+
+.btn-download-cv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #149ddd;
+  padding: 8px 20px;
+  border-radius: 50px;
+  transition: 0.3s;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn-download-cv i {
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.btn-download-cv:hover {
+  background: #37b3ed;
+  color: #fff;
+}
+
+.resume-tabs {
+  border-bottom: 2px solid #e4eaf9;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.resume-tabs .nav-item {
+  margin-bottom: -2px;
+}
+
+.resume-tabs .nav-link {
+  border: none;
+  color: #45505b;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 25px;
+  background: transparent;
+  transition: 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.resume-tabs .nav-link:hover {
+  color: #149ddd;
+}
+
+.resume-tabs .nav-link.active {
+  color: #149ddd;
+  background: transparent;
+  border-bottom: 2px solid #149ddd;
+}
+
+.resume-content {
+  min-height: 300px;
+  padding: 20px 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.resume-content .resume-title {
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  color: #45505b;
+  text-align: center;
+}
+
+.resume-content .resume-item {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e4eaf9;
+}
+
+.resume-content .resume-item:last-child {
+  border-bottom: none;
+}
+
+.resume-content .resume-item .item-date {
+  flex: 0 0 80px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #45505b;
+}
+
+.resume-content .resume-item .item-content {
+  flex: 1;
+}
+
+.resume-content .resume-item h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #45505b;
+  margin-bottom: 5px;
+}
+
+.resume-content .resume-item h5 {
+  font-size: 16px;
+  color: #149ddd;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.resume-content .resume-item p {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.resume-content .resume-item ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.resume-content .resume-item ul li {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.resume-content .resume-item .paper-link {
+  color: #149ddd;
+  font-size: 18px;
+  margin-left: 8px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.resume-content .resume-item .paper-link:hover {
+  color: #37b3ed;
+}
+
+@media (max-width: 768px) {
+  .resume-tabs .nav-link {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .resume-content .resume-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .resume-content .resume-item .item-date {
+    flex: 0 0 auto;
+  }
 }

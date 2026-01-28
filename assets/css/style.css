@@ -642,9 +642,16 @@ section {
   padding-top: 40px;
 }
 
-.portfolio-details .portfolio-details-slider img {
-  width: 100%;
+.portfolio-details .portfolio-details-slider .swiper-slide {
+  text-align: center;
+}
 
+.portfolio-details .portfolio-details-slider img {
+  width: auto;
+  max-width: 100%;
+  max-height: 70vh;
+  margin: 0 auto;
+  display: block;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {

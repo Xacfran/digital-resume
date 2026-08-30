@@ -1608,3 +1608,211 @@ section {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   }
 }
+
+/*--------------------------------------------------------------
+# Portfolio Paging
+--------------------------------------------------------------*/
+.portfolio-paged {
+  /* The arrows centre on the grid, not on the whole wrapper, so they need to
+     climb back up by half the dot row. Keep this in step with the height below */
+  --portfolio-dots-h: 2.25rem;
+  position: relative;
+}
+
+.portfolio-dots {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  height: var(--portfolio-dots-h);
+}
+
+.portfolio-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio-dot:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.portfolio-dot-active,
+.portfolio-dot-active:hover {
+  background: #149ddd;
+  transform: scale(1.3);
+}
+
+.portfolio-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  /* Invisible against the pale section background, but keeps the chevron
+     readable on the odd width where it still clips a dark figure */
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* Hairline inner ring, the detail that makes the button read as glass */
+.portfolio-nav:hover:not(:disabled) {
+  color: #149ddd;
+}
+
+.portfolio-nav:active:not(:disabled) {
+  opacity: 0.7;
+}
+
+.portfolio-nav:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+/* One page of figures means nothing to page through */
+.portfolio-paging-idle {
+  display: none;
+}
+
+/* Phones and tablets have no room beside the grid, so the arrows sit inline
+   with the dots underneath it */
+.portfolio-nav {
+  position: relative;
+  margin: 0 12px;
+}
+
+.portfolio-dots {
+  order: 2;
+}
+
+@media (max-width: 991px) {
+  .portfolio-paged {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* flex-shrink 0 stops the grid giving up width to squeeze an arrow onto its
+     own line, which would leave the controls stranded beside the figures */
+  .portfolio-container {
+    flex: 0 0 100%;
+  }
+
+  .portfolio-dots {
+    align-items: center;
+    height: auto;
+  }
+
+  .portfolio-nav-prev {
+    order: 1;
+  }
+
+  .portfolio-nav-next {
+    order: 3;
+  }
+}
+
+/* From large screens up the arrows lift onto the sides of the grid. Vertical
+   centre lands in the gutter between the two rows, so they cover very little art */
+@media (min-width: 992px) {
+  .portfolio-paged .portfolio-nav {
+    position: absolute;
+    top: calc(50% - var(--portfolio-dots-h) / 2);
+    transform: translateY(-50%);
+    margin: 0;
+    z-index: 5;
+  }
+
+  /* Sit the arrows as far clear of the artwork as the window allows. The calc
+     is how much room is left outside the container at this width, so on a wide
+     screen they pull out to the 3.25rem cap and on a narrow one they stop short
+     of the viewport edge instead of forcing a horizontal scrollbar */
+  .portfolio-nav-prev {
+    left: max(-3.25rem, calc((100% - 100vw) / 2 + 1.5rem));
+  }
+
+  .portfolio-nav-next {
+    right: max(-3.25rem, calc((100% - 100vw) / 2 + 1.5rem));
+  }
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details Slider
+--------------------------------------------------------------*/
+.portfolio-details-figure {
+  position: relative;
+}
+
+/* Swiper flags its own states with classes instead of the disabled attribute,
+   so they have to be named alongside :disabled. The lock class is what it adds
+   when there is only one figure and there is nothing to navigate to */
+.portfolio-nav.swiper-button-disabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
+}
+
+.portfolio-nav.swiper-button-lock {
+  display: none;
+}
+
+.portfolio-details .portfolio-details-slider a {
+  display: block;
+  cursor: zoom-in;
+}
+
+@media (max-width: 991px) {
+  .portfolio-details-figure {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portfolio-details-figure .portfolio-details-slider {
+    flex: 0 0 100%;
+  }
+
+  .details-nav-prev {
+    order: 1;
+  }
+
+  .details-nav-next {
+    order: 2;
+  }
+}
+
+/* Same adaptive offset as the portfolio grid. The half-rem nudge upward accounts
+   for the bullet row, which sits inside the slider and drags the midpoint down */
+@media (min-width: 992px) {
+  .details-nav-prev,
+  .details-nav-next {
+    position: absolute;
+    top: calc(50% - 1rem);
+    transform: translateY(-50%);
+    margin: 0;
+    z-index: 5;
+  }
+
+  .details-nav-prev {
+    left: max(-3.25rem, calc((100% - 100vw) / 2 + 1.5rem));
+  }
+
+  .details-nav-next {
+    right: max(-3.25rem, calc((100% - 100vw) / 2 + 1.5rem));
+  }
+}

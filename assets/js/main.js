@@ -148,7 +148,7 @@
   }
 
   /**
-   * Porfolio isotope and filter
+   * Porfolio isotope, filter and paging
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
@@ -159,6 +159,67 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
+      // Figures shown per page. One number to change if the grid should hold more
+      const PAGE_SIZE = 6;
+
+      const portfolioItems = select('.portfolio-container .portfolio-item', true);
+      const prevBtn = select('.portfolio-nav-prev');
+      const nextBtn = select('.portfolio-nav-next');
+      const dotsBar = select('.portfolio-dots');
+
+      let activeFilter = '*';
+      let currentPage = 0;
+
+      // Category and page compose instead of competing: the category narrows the
+      // set, then the page takes a slice of whatever is left. Isotope accepts a
+      // function here, so both live in the one filter it was already running
+      function applyLayout() {
+        const matching = activeFilter === '*' ?
+          portfolioItems :
+          portfolioItems.filter(el => el.matches(activeFilter));
+
+        const pageCount = Math.max(1, Math.ceil(matching.length / PAGE_SIZE));
+        currentPage = Math.min(Math.max(currentPage, 0), pageCount - 1);
+
+        const start = currentPage * PAGE_SIZE;
+        const onPage = matching.slice(start, start + PAGE_SIZE);
+
+        portfolioIsotope.arrange({
+          filter: el => onPage.indexOf(el) !== -1
+        });
+
+        renderControls(pageCount);
+      }
+
+      function goToPage(page) {
+        currentPage = page;
+        applyLayout();
+      }
+
+      function renderControls(pageCount) {
+        // A single page has nothing to page through, so the controls stay out of the way
+        const idle = pageCount < 2;
+        [prevBtn, nextBtn, dotsBar].forEach(function (el) {
+          if (el) el.classList.toggle('portfolio-paging-idle', idle);
+        });
+
+        if (prevBtn) prevBtn.disabled = currentPage === 0;
+        if (nextBtn) nextBtn.disabled = currentPage === pageCount - 1;
+
+        if (!dotsBar) return;
+        dotsBar.innerHTML = '';
+        for (let i = 0; i < pageCount; i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'portfolio-dot' + (i === currentPage ? ' portfolio-dot-active' : '');
+          dot.setAttribute('aria-label', 'Go to page ' + (i + 1));
+          dot.addEventListener('click', function () {
+            goToPage(i);
+          });
+          dotsBar.appendChild(dot);
+        }
+      }
+
       on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
         portfolioFilters.forEach(function (el) {
@@ -166,13 +227,30 @@
         });
         this.classList.add('filter-active');
 
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function () {
-          AOS.refresh()
-        });
+        activeFilter = this.getAttribute('data-filter');
+        currentPage = 0;
+        applyLayout();
       }, true);
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          goToPage(currentPage - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          goToPage(currentPage + 1);
+        });
+      }
+
+      // Registered once. The original bound this inside the filter handler, which
+      // added a fresh listener on every click
+      portfolioIsotope.on('arrangeComplete', function () {
+        AOS.refresh()
+      });
+
+      applyLayout();
     }
 
   });
@@ -199,6 +277,31 @@
     selector: '.portfolio-lightbox',
     slideHTML: portfolioSlideHTML
   });
+
+  /**
+   * Figure slider on the project pages
+   */
+  // The markup and the Swiper bundle were always here but nothing ever started
+  // the slider, so every project page showed its first figure and no way to reach
+  // the rest. Elements are passed straight in rather than as selectors because
+  // the arrows live outside .swiper, which clips its own overflow
+  const detailsSlider = select('.portfolio-details-slider');
+  if (detailsSlider && typeof Swiper !== 'undefined') {
+    new Swiper(detailsSlider, {
+      speed: 500,
+      loop: false,
+      // Scientific figures come in all shapes, so let the frame follow the art
+      autoHeight: true,
+      pagination: {
+        el: select('.portfolio-details-figure .swiper-pagination'),
+        clickable: true
+      },
+      navigation: {
+        prevEl: select('.details-nav-prev'),
+        nextEl: select('.details-nav-next')
+      }
+    });
+  }
 
   /**
    * Animation on scroll

@@ -67,15 +67,29 @@
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
-        <div class="portfolio-details-slider swiper">
-          <div class="swiper-wrapper align-items-center">
+        <!-- The wrapper sits outside .swiper, which clips its overflow, so the
+             arrows have somewhere to hang that is not cut off -->
+        <div class="portfolio-details-figure">
 
-            <div class="swiper-slide">
-              <img src="assets/img/portfolio/AMPs_NASBR2022.png" alt="Antimicrobial Peptides Poster">
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+
+              <div class="swiper-slide">
+                <a href="assets/img/portfolio/AMPs_NASBR2022.png" class="portfolio-lightbox" data-gallery="detailsGallery"
+                  data-description="Antimicrobial Peptides Poster"><img src="assets/img/portfolio/AMPs_NASBR2022.png" alt="Antimicrobial Peptides Poster"></a>
+              </div>
+
             </div>
-
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="swiper-pagination"></div>
+
+          <button type="button" class="portfolio-nav details-nav-prev" aria-label="Previous figure">
+            <i class="bx bx-chevron-left"></i>
+          </button>
+          <button type="button" class="portfolio-nav details-nav-next" aria-label="Next figure">
+            <i class="bx bx-chevron-right"></i>
+          </button>
+
         </div>
 
         <div class="row justify-content-between gy-4 mt-4">

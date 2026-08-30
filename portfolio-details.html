@@ -68,16 +68,29 @@
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
-        <div class="portfolio-details-slider swiper">
-          <div class="swiper-wrapper align-items-center">
+        <!-- The wrapper sits outside .swiper, which clips its overflow, so the
+             arrows have somewhere to hang that is not cut off -->
+        <div class="portfolio-details-figure">
 
-            <div class="swiper-slide">
-              <iframe src="https://player.vimeo.com/video/713851084?h=ddf5404f10" width="640" height="564"
-                frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+
+              <div class="swiper-slide">
+                <iframe src="https://player.vimeo.com/video/713851084?h=ddf5404f10" width="640" height="564"
+                  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+              </div>
+
             </div>
-
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="swiper-pagination"></div>
+
+          <button type="button" class="portfolio-nav details-nav-prev" aria-label="Previous figure">
+            <i class="bx bx-chevron-left"></i>
+          </button>
+          <button type="button" class="portfolio-nav details-nav-next" aria-label="Next figure">
+            <i class="bx bx-chevron-right"></i>
+          </button>
+
         </div>
 
         <div class="row justify-content-between gy-4 mt-4">

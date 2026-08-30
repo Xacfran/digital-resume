@@ -654,6 +654,10 @@
                   <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
                 </div>
 
+                <div class="col-md-12 d-flex justify-content-center">
+                  <div class="h-captcha" data-captcha="true"></div>
+                </div>
+
                 <div class="col-md-12 text-center">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
@@ -711,6 +715,22 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
+  <!-- hCaptcha sizing -------
+       The standard widget is 303px wide and the form column is about the viewport
+       minus 24px, so it only overflows below roughly 330px. Must run before the
+       loader below, since hCaptcha reads data-size when it renders -->
+  <script>
+    (function () {
+      const widget = document.querySelector('.h-captcha');
+      if (widget && window.matchMedia('(max-width: 380px)').matches) {
+        widget.setAttribute('data-size', 'compact');
+      }
+    })();
+  </script>
+
+  <!-- Renders the hCaptcha widget and supplies the Web3Forms free-plan sitekey -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+
   <!-- Contact form submit -------
        Posts to Web3Forms and reuses the template's loading, sent and error blocks -->
   <script>
@@ -728,12 +748,24 @@
         errorMessage.classList.add('d-block');
       }
 
+      // A captcha token is valid for one submission only, so clear it after every attempt
+      function resetCaptcha() {
+        if (window.hcaptcha) window.hcaptcha.reset();
+      }
+
       form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        loading.classList.add('d-block');
         errorMessage.classList.remove('d-block');
         sentMessage.classList.remove('d-block');
+
+        const captcha = form.querySelector('[name="h-captcha-response"]');
+        if (captcha && !captcha.value) {
+          showError('Please complete the captcha before sending.');
+          return;
+        }
+
+        loading.classList.add('d-block');
 
         fetch(form.action, {
           method: 'POST',
@@ -746,12 +778,15 @@
               loading.classList.remove('d-block');
               sentMessage.classList.add('d-block');
               form.reset();
+              resetCaptcha();
             } else {
               showError(data.message || 'Message not sent. Please email me directly at xacfran@gmail.com');
+              resetCaptcha();
             }
           })
           .catch(() => {
             showError('Message not sent. Please email me directly at xacfran@gmail.com');
+            resetCaptcha();
           });
       });
     })();

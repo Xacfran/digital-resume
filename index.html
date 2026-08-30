@@ -177,8 +177,6 @@
                     <h4>Research Collaborator</h4>
                     <h5>The Ray Lab, Texas Tech University, USA</h5>
                     <p>Ecuadorian bats: A key to investigating aging and metabolic trade‑offs based on feeding habits and transposable element evolution</p>
-                    <p>RAPID: Collaborative Research: Immunological adaptations in bats to moderate the effect of
-                      coronavirus infection</p>
                   </div>
                 </div>
                 <div class="resume-item">
@@ -195,10 +193,10 @@
                     <h4>Teaching Assistant</h4>
                     <h5>Texas Tech University, USA</h5>
                     <ul>
-                      <li>Biology I. BIOL1403. Fall 2021/2022</li>
-                      <li>Biology II. BIOL1404. Spring 2022/2023</li>
-                      <li>Genetics. BIOL3416. Summer 2022</li>
-                      <li>Genomes and Genome Evolution. BIOL4340. Fall 2023</li>
+                      <li>Biology I. BIOL1403. Every Fall 2021-2025</li>
+                      <li>Biology II. BIOL1404. Every Spring 2022-2026</li>
+                      <li>Genetics. BIOL3416. Summer 2022 & Summer 2026</li>
+                      <li>Genomes and Genome Evolution. BIOL4340. Fall 2023 & Fall 2025</li>
                     </ul>
                   </div>
                 </div>
@@ -306,7 +304,7 @@
                   </div>
                 </div>
 
-                <div class="resume-item">
+                <!-- <div class="resume-item">
                   <div class="item-date">2023</div>
                   <div class="item-content">
                     <h4>deAMPlifying the Immune Response? Antimicrobial Peptides Evolution in Chiroptera</h4>
@@ -314,7 +312,7 @@
                     </h5>
                     <p>Oral Presentation</p>
                   </div>
-                </div>
+                </div> -->
 
                 <!-- <div class="resume-item">
                   <div class="item-date">2018</div>
@@ -333,24 +331,35 @@
               <div class="tab-pane fade" id="awards" role="tabpanel" aria-labelledby="awards-tab">
                 <h3 class="resume-title">Awards & Honors</h3>
                 <div class="resume-item">
+                  <div class="item-date">2026</div>
+                  <div class="item-content">
+                    <h4>NSF STAR [co-authored]</h4>
+                    <h5>The Ray Lab, Texas Tech University, USA.</h5>
+                    <p>Supervised Machine Learning to Improve Transposable Element Polymorphism Detection for Phylogenetic Inference.</p>
+                  </div>
+                </div>
+                <div class="resume-item">
                   <div class="item-date">2025</div>
                   <div class="item-content">
                     <h4>J. Knox Jones, Jr., Memorial Endowed Scholarship</h4>
-                    <p>Award to graduate students at TTU with research interests in mammalian systematics and natural
+                    <h5>Texas Tech University, USA.</h5>
+                    <p>Award to support research interests in mammalian systematics and natural
                       history.</p>
                   </div>
                 </div>
                 <div class="resume-item">
                   <div class="item-date">2023</div>
                   <div class="item-content">
-                    <h4>Bat Biology Foundation Award</h4>
-                    <p>Granted to undertake field campaigns in several Reserves and National Parks in Ecuador and to sequence the genomes of several native and endemic bat species.</p>
+                    <h4>Expeditions and Field Work Grant Program</h4>
+                    <h5>Bat Biology Foundation Award</h5>
+                    <p>Granted to undertake field campaigns in several Reserves and National Parks in Ecuador and to sequence the genomes of several native and endemic bat species. <a href="https://www.batbio.org/projects-8">More here.</a></p>
                   </div>
                 </div>
                 <div class="resume-item">
                   <div class="item-date">2022</div>
                   <div class="item-content">
                     <h4>General Fellowships for New and Continuing Graduate Students</h4>
+                    <h5>Texas Tech University, USA.</h5>
                     <p>Fellowship granted by Texas Tech University covered tuition costs over the summer period plus
                       research funds.</p>
                   </div>
@@ -362,8 +371,9 @@
 
       </div>
     </section><!-- End Resume Section -->
+
     <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
+    <!-- <section id="skills" class="skills section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -426,7 +436,8 @@
         </div>
 
       </div>
-    </section><!-- End Skills Section -->
+    </section> -->
+    <!-- End Skills Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
@@ -434,11 +445,11 @@
 
         <div class="section-title">
           <h2>Portfolio</h2>
-          <p>This is some of the visual work I have created by merging the results of software for phylogenetic
-            reconstruction as IQ-TREE and Mega, and the R programming language, with Adobe Illustrator and Photoshop.
-            Most of my plots are heavily coded in R with the packages: <a
+          <p> I combine my skills on programming languages and graphic design applications to create visually appealing and scientifically accurate illustrations and animations.
+            Most of my raw data visualizations are heavily coded in R with the packages: <a
               href="https://www.tidyverse.org/">tidyverse</a>, <a href="https://movevis.org/">movevis</a>,
-            <a href="https://www.rayshader.com/">rayshader</a>, <a href="https://github.com/USEPA/elevatr">elevatr</a>,
+            <a href="https://www.rayshader.com/">rayshader</a>, <a href="https://github.com/USEPA/elevatr">elevatr</a>, and tons of others. You can read more about the process of creating
+            these visualizations by clicking on the figures below.
           </p>
         </div>
 
@@ -616,8 +627,14 @@
           </div>
 
           <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-              data-aos-delay="200">
+            <form action="https://api.web3forms.com/submit" method="post" id="contact-form" class="php-email-form"
+              data-aos="fade-up" data-aos-delay="200">
+
+              <!-- Free access key from web3forms.com, replace the placeholder below -->
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+              <!-- Honeypot, bots fill this in and Web3Forms discards the submission -->
+              <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -688,7 +705,6 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -697,6 +713,52 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Contact form submit -------
+       Posts to Web3Forms and reuses the template's loading, sent and error blocks -->
+  <script>
+    (function () {
+      const form = document.querySelector('#contact-form');
+      if (!form) return;
+
+      const loading = form.querySelector('.loading');
+      const errorMessage = form.querySelector('.error-message');
+      const sentMessage = form.querySelector('.sent-message');
+
+      function showError(text) {
+        loading.classList.remove('d-block');
+        errorMessage.textContent = text;
+        errorMessage.classList.add('d-block');
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        loading.classList.add('d-block');
+        errorMessage.classList.remove('d-block');
+        sentMessage.classList.remove('d-block');
+
+        fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              loading.classList.remove('d-block');
+              sentMessage.classList.add('d-block');
+              form.reset();
+            } else {
+              showError(data.message || 'Message not sent. Please email me directly at xacfran@gmail.com');
+            }
+          })
+          .catch(() => {
+            showError('Message not sent. Please email me directly at xacfran@gmail.com');
+          });
+      });
+    })();
+  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

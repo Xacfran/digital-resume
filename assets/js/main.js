@@ -180,8 +180,24 @@
   /**
    * Initiate portfolio lightbox 
    */
+  // GLightbox's stock template puts the caption beside the image, inside a
+  // container that spans the whole slide, so a caption pinned there never lines up
+  // with the picture. This copy nests it inside the media box, which hugs the image
+  // at any aspect ratio. Keep in sync with slideHTML in glightbox.min.js if that
+  // vendor file is ever updated
+  const portfolioSlideHTML = '<div class="gslide">' +
+    '<div class="gslide-inner-content">' +
+    '<div class="ginner-container">' +
+    '<div class="gslide-media">' +
+    '<div class="gslide-description">' +
+    '<div class="gdesc-inner">' +
+    '<h4 class="gslide-title"></h4>' +
+    '<div class="gslide-desc"></div>' +
+    '</div></div></div></div></div></div>';
+
   const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
+    selector: '.portfolio-lightbox',
+    slideHTML: portfolioSlideHTML
   });
 
   /**

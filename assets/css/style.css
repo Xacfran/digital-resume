@@ -1832,12 +1832,13 @@ section {
 }
 
 .figure-rights a {
-  color: rgba(0, 0, 0, 0.45);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
-.figure-rights a:hover {
+.figure-rights a:hover,
+.figure-rights a:focus,
+.figure-rights a:active {
   color: #149ddd;
 }

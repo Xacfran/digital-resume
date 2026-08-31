@@ -1770,11 +1770,6 @@ section {
   display: none;
 }
 
-.portfolio-details .portfolio-details-slider a {
-  display: block;
-  cursor: zoom-in;
-}
-
 @media (max-width: 991px) {
   .portfolio-details-figure {
     display: flex;
@@ -1815,4 +1810,34 @@ section {
   .details-nav-next {
     right: max(-3.25rem, calc((100% - 100vw) / 2 + 1.5rem));
   }
+}
+
+/*--------------------------------------------------------------
+# Figure Rights Notice
+--------------------------------------------------------------*/
+/* Deliberately quiet. It needs to be readable by anyone who looks for it
+   without competing with the work it sits under */
+.figure-rights {
+  margin: 18px 0 0 0;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.figure-rights i {
+  position: relative;
+  top: 2px;
+  font-size: 15px;
+}
+
+.figure-rights a {
+  color: rgba(0, 0, 0, 0.45);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.3s ease-in-out;
+}
+
+.figure-rights a:hover {
+  color: #149ddd;
 }

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio Details - iPortfolio Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> <!-- For ORCID, Google Scholar and Researchgate icons -->
+
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex flex-column justify-content-center">
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Portfolio Details</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Portfolio Details</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <!-- The wrapper sits outside .swiper, which clips its overflow, so the
+             arrows have somewhere to hang that is not cut off -->
+        <div class="portfolio-details-figure">
+
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+
+              <div class="swiper-slide">
+                <img src="assets/img/subprojects/bears-movedesign-left.jpg" alt="Andean bears' tracks and home ranges">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/img/subprojects/bears-movedesign-right.jpg" alt="Andean bears' tracks and home ranges">
+              </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <button type="button" class="portfolio-nav details-nav-prev" aria-label="Previous figure">
+            <i class="bx bx-chevron-left"></i>
+          </button>
+          <button type="button" class="portfolio-nav details-nav-next" aria-label="Next figure">
+            <i class="bx bx-chevron-right"></i>
+          </button>
+
+        </div>
+
+        <p class="figure-rights">
+          <i class="bx bx-copyright"></i> Figures by Francisco X. Castellanos. Please do not reuse,
+          modify or redistribute them without <a href="index.html#contact">prior written permission</a>.
+        </p>
+
+        <div class="row justify-content-between gy-4 mt-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-description">
+              <h2>Recommendations for Andean bear movement ecology</h2>
+              <p>
+                Cover for the <a href="https://www.eventbrite.co.uk/e/collar-cameras-gps-and-the-new-frontier-of-bear-tracking-tickets-1984223670412">webinar</a> I was invited by The Brun Bear Foundation. I shared our Foundation's fieldwork experiences with collar-tagging Andean bears and current knowledge with new computational tools. How should we think about study designs before deploying n number of collars? How long and how often should fixes be taken for movement ecology studies on the species?
+                <br><br>
+                The background is a composite of <a href="https://ctmm-initiative.github.io/ctmm/articles/akde.html">Autocorrelated Kernel Density Estimations (AKDE)</a> of the bears' utilization distributions showing upper and lower 95% Confidence Intervals as dashed lines and the estimate as a continuous line. Each GPS fix is represented as a dot and its size corresponds to the uncertainty of the fix estimated with <a href="https://ctmm-initiative.github.io/ctmm/articles/error.html">ctmm</a>. The Andean bear vectors were created in Adobe Illustrator. The continuous and dashed lines connecting the bear subpopulation are fictional and were created manually.
+              </p>
+            </div>
+
+            <div class="tech-stack">
+              <h3>Technology Stack</h3>
+              <span class="tech-badge">Outreach</span>
+              <span class="tech-badge">R</span>
+              <span class="tech-badge">Education</span>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category:</strong> R</li>
+                <li><strong>Organization:</strong> <a href="https://osoandino.org/">Fundación Oso Andino</a></li>
+                <li><strong>Project date:</strong> August, 2026</li>
+                <li><strong>Project URL:</strong> <a href="#">Unreleased</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <h3>Francisco X. Castellanos</h3>
+      <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://orcid.org/0000-0003-0955-8185" class="orcid"> <i class="ai ai-orcid"></i></a>
+        <a href="https://scholar.google.com/citations?user=Wne6ba8AAAAJ&hl=en" class="mortarboard"><i
+            class="ai ai-google-scholar"></i></a>
+        <a href="https://www.researchgate.net/profile/Francisco-Castellanos-4" class="bootstrap"><i
+            class="ai ai-researchgate"></i></a>
+        <a href="https://github.com/Xacfran" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://twitter.com/xacfran" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/francisco-x-castellanos/" class="linkedin"><i
+            class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        Copyright <strong><span>iPortfolio</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

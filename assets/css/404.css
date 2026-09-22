@@ -1,0 +1,331 @@
+/**
+* 404 page styles. Loaded only by 404.html so nothing here reaches the rest of the site.
+* Colors follow assets/css/style.css: text #272829, accent #149ddd
+*/
+
+.nf {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff;
+  color: #272829;
+}
+
+/* Numbers and ghost -------- */
+
+.nf-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.nf-digit {
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(72px, 15vw, 120px);
+  font-weight: 700;
+  line-height: 1;
+  color: #272829;
+  opacity: 0.7;
+  user-select: none;
+  animation: nf-digit-in 0.8s cubic-bezier(0.43, 0.13, 0.23, 0.96) 0.1s both;
+}
+
+.nf-digit-left {
+  --nf-from-x: -40px;
+  --nf-from-rot: -5deg;
+}
+
+.nf-digit-right {
+  --nf-from-x: 40px;
+  --nf-from-rot: 5deg;
+}
+
+/* Each transform gets its own layer so the entrance, the float and the hover
+   never overwrite one another */
+.nf-ghost {
+  display: inline-block;
+  line-height: 0;
+  animation: nf-ghost-in 0.6s cubic-bezier(0.43, 0.13, 0.23, 0.96) 0.2s both;
+}
+
+.nf-ghost-float {
+  display: inline-block;
+  line-height: 0;
+  animation: nf-float 2s ease-in-out 0.9s infinite;
+}
+
+.nf-ghost-tilt {
+  display: inline-block;
+  line-height: 0;
+}
+
+.nf-ghost:hover .nf-ghost-tilt {
+  animation: nf-wiggle 2s ease-in-out infinite alternate;
+}
+
+.nf-ghost img {
+  display: block;
+  width: clamp(68px, 13vw, 100px);
+  height: auto;
+  user-select: none;
+  transition: transform 0.6s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+.nf-ghost:hover img {
+  transform: scale(1.1) translateY(-10px);
+}
+
+/* Copy -------- */
+
+.nf-title {
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  color: #272829;
+  opacity: 0.85;
+  margin: 0 0 20px 0;
+  animation: nf-rise 0.6s cubic-bezier(0.43, 0.13, 0.23, 0.96) 0.35s both;
+}
+
+.nf-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(16px, 2.4vw, 20px);
+  color: #272829;
+  opacity: 0.6;
+  margin: 0 0 40px 0;
+  max-width: min(34ch, 100%);
+  animation: nf-rise 0.6s cubic-bezier(0.43, 0.13, 0.23, 0.96) 0.45s both;
+}
+
+.nf-action {
+  animation: nf-rise 0.6s cubic-bezier(0.43, 0.13, 0.23, 0.96) 0.55s both;
+}
+
+.nf-note {
+  margin-top: 48px;
+  animation: nf-rise 0.6s cubic-bezier(0.43, 0.13, 0.23, 0.96) 0.65s both;
+}
+
+.nf-note a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  color: #272829;
+  opacity: 0.55;
+  text-decoration: underline;
+  transition: opacity 0.3s;
+}
+
+.nf-note a:hover {
+  color: #272829;
+  opacity: 0.85;
+}
+
+/* Button -------- */
+
+.flow-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  overflow: hidden;
+  padding: 12px 32px;
+  border: 1.5px solid rgba(20, 157, 221, 0.5);
+  border-radius: 100px;
+  background: transparent;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #272829;
+  cursor: pointer;
+  transition: border-color 0.6s cubic-bezier(0.23, 1, 0.32, 1), color 0.6s cubic-bezier(0.23, 1, 0.32, 1), border-radius 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.flow-btn:hover {
+  border-color: transparent;
+  border-radius: 12px;
+  color: #fff;
+}
+
+.flow-btn:active {
+  transform: scale(0.95);
+}
+
+.flow-btn-text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: transform 0.8s ease-out;
+}
+
+.flow-btn:hover .flow-btn-text {
+  transform: translateX(12px);
+}
+
+/* The fill starts as a dot behind the label and opens past the button edges */
+.flow-btn-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  background: #149ddd;
+  opacity: 0;
+  transition: width 0.8s cubic-bezier(0.19, 1, 0.22, 1), height 0.8s cubic-bezier(0.19, 1, 0.22, 1), margin 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.flow-btn:hover .flow-btn-circle {
+  width: 340px;
+  height: 340px;
+  margin: -170px 0 0 -170px;
+  opacity: 1;
+}
+
+.flow-btn .flow-arrow {
+  position: absolute;
+  z-index: 9;
+  font-size: 16px;
+  line-height: 1;
+  color: #272829;
+  transition: left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), right 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.flow-arrow-in {
+  left: -25%;
+}
+
+.flow-btn:hover .flow-arrow-in {
+  left: 16px;
+  color: #fff;
+}
+
+.flow-arrow-out {
+  right: 16px;
+}
+
+.flow-btn:hover .flow-arrow-out {
+  right: -25%;
+  color: #fff;
+}
+
+/* Keyframes -------- */
+
+@keyframes nf-digit-in {
+  from {
+    opacity: 0;
+    transform: translate(var(--nf-from-x), 15px) rotate(var(--nf-from-rot));
+  }
+
+  to {
+    opacity: 0.7;
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+@keyframes nf-ghost-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(15px) rotate(-5deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0);
+  }
+}
+
+@keyframes nf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes nf-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes nf-wiggle {
+  from {
+    transform: rotate(-5deg);
+  }
+
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+/* Larger screens get more air between the numbers and the ghost */
+@media (min-width: 768px) {
+  .nf-display {
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+}
+
+/* Motion preferences -------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nf-digit,
+  .nf-ghost,
+  .nf-ghost-float,
+  .nf-title,
+  .nf-text,
+  .nf-action,
+  .nf-note,
+  .nf-ghost:hover .nf-ghost-tilt {
+    animation: none;
+  }
+
+  .nf-ghost img,
+  .nf-ghost:hover img {
+    transition: none;
+    transform: none;
+  }
+
+  /* No travelling fill. The button still answers a hover, it just does it at once */
+  .flow-btn,
+  .flow-btn-text,
+  .flow-btn .flow-arrow,
+  .flow-btn-circle {
+    transition: none;
+  }
+
+  .flow-btn:hover {
+    background: #149ddd;
+  }
+
+  .flow-btn:hover .flow-btn-circle {
+    opacity: 0;
+  }
+
+  /* Cancel the travelling label and arrows, keep them where they rest */
+  .flow-btn:hover .flow-btn-text {
+    transform: translateX(-12px);
+  }
+
+  .flow-btn:hover .flow-arrow-in {
+    left: -25%;
+  }
+
+  .flow-btn:hover .flow-arrow-out {
+    right: 16px;
+  }
+}

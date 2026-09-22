@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Page not found - Francisco X. Castellanos</title>
+  <meta content="This page could not be found." name="description">
+
+  <!-- Favicons -->
+  <link href="assets/img/dna-large.png" rel="icon">
+  <link href="assets/img/dna-small.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Page CSS File -->
+  <link href="assets/css/404.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex flex-column justify-content-center">
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Not Found Section ======= -->
+    <section class="nf">
+
+      <div class="nf-display">
+        <span class="nf-digit nf-digit-left" aria-hidden="true">4</span>
+
+        <span class="nf-ghost">
+          <span class="nf-ghost-float">
+            <span class="nf-ghost-tilt">
+              <img src="assets/img/ghost-404.png" alt="" width="161" height="200" draggable="false">
+            </span>
+          </span>
+        </span>
+
+        <span class="nf-digit nf-digit-right" aria-hidden="true">4</span>
+      </div>
+
+      <h1 class="nf-title">Boo! Page missing!</h1>
+
+      <p class="nf-text">Whoops! This page must be a ghost &mdash; it's not here!</p>
+
+      <div class="nf-action">
+        <a class="flow-btn" href="index.html">
+          <i class="bi bi-arrow-right flow-arrow flow-arrow-in" aria-hidden="true"></i>
+          <span class="flow-btn-text">Back home</span>
+          <span class="flow-btn-circle" aria-hidden="true"></span>
+          <i class="bi bi-arrow-right flow-arrow flow-arrow-out" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="nf-note">
+        <a href="index.html#portfolio">Looking for a project? Try the portfolio</a>
+      </div>
+
+    </section><!-- End Not Found Section -->
+
+  </main><!-- End #main -->
+
+  <!-- The shared main.js boots AOS, GLightbox, Swiper and Isotope, none of which
+       this page has markup for, so it only needs the mobile nav toggle -->
+  <script>
+    (function () {
+      const toggleBtn = document.querySelector('.mobile-nav-toggle');
+      if (!toggleBtn) return;
+      toggleBtn.addEventListener('click', function () {
+        document.querySelector('#header').classList.toggle('header-show');
+        toggleBtn.classList.toggle('bi-list');
+        toggleBtn.classList.toggle('bi-x');
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

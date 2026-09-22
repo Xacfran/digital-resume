@@ -30,21 +30,6 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex flex-column justify-content-center">
-    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="index.html#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
-        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
-        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
-      </ul>
-    </nav>
-  </header><!-- End Header -->
-
   <main id="main">
 
     <!-- ======= Not Found Section ======= -->
@@ -84,20 +69,6 @@
     </section><!-- End Not Found Section -->
 
   </main><!-- End #main -->
-
-  <!-- The shared main.js boots AOS, GLightbox, Swiper and Isotope, none of which
-       this page has markup for, so it only needs the mobile nav toggle -->
-  <script>
-    (function () {
-      const toggleBtn = document.querySelector('.mobile-nav-toggle');
-      if (!toggleBtn) return;
-      toggleBtn.addEventListener('click', function () {
-        document.querySelector('#header').classList.toggle('header-show');
-        toggleBtn.classList.toggle('bi-list');
-        toggleBtn.classList.toggle('bi-x');
-      });
-    })();
-  </script>
 
 </body>
 
